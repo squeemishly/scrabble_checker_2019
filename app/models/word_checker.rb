@@ -17,7 +17,6 @@ class WordChecker
   end
 
   def create_word_list
-    puts "creating word list"
     File.readlines('app/assets/words.txt').inject({}) do |hash, word|
       word_hash = word.chomp.downcase.split('').sort.join
       hash[word_hash] ||= []
