@@ -5,6 +5,10 @@ class WordChecker
     @word_list = create_word_list
   end
 
+  def self.instance
+    @instance ||= WordChecker.new
+  end
+
   def find_words(tiles)
     anagramify(tiles).inject([]) do |arr, word|
       word_hash = word.split('').sort.join
