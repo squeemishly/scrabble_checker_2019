@@ -32,4 +32,16 @@ class WordChecker
       letters.combination(x).to_a
     end.flatten(1).uniq.map { |word| word.join('') }
   end
+
+  def return_scores(words)
+    words.inject({}) do |hash, word|
+      hash[word] = ScoreChecker.calculate_score(word)
+      hash
+    end
+  end
+
+  def return_word_scores(tiles)
+    words = find_words(tiles)
+    return_scores(words)
+  end
 end

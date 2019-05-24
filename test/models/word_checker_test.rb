@@ -26,4 +26,16 @@ class WordCheckerTest < Minitest::Test
     assert_equal result, word_list
     refute word_list.include?("sah")
   end
+
+  def test_it_can_calculate_the_score_of_each_word
+    result = { "as"=>2, "sh"=>5, "ash"=>6 }
+
+    assert_equal result, wc.return_scores(["as", "sh", "ash"])
+  end
+
+  def test_it_can_return_the_score_for_each_word_in_a_group_of_tiles
+    result = {"ah"=>5, "ha"=>5, "as"=>2, "sh"=>5, "ahs"=>6, "ash"=>6, "has"=>6, "sha"=>6}
+
+    assert_equal result, wc.return_word_scores("ahs")
+  end
 end
