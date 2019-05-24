@@ -8,10 +8,19 @@ Welcome
   <% end %>
 </div>
 
+<br/>
+
 <% if @words %>
-  <ul>
+  <table>
+    <tr>
+      <td>Word</td>
+      <td>Base Score</td>
+    </tr>
   <% @words.each do |word| %>
-    <li><%= word %></li>
+    <tr>
+      <td><%= word[0] %></td>
+      <td><%= word[1] %></td>
+    </tr>
   <% end %>
-  </ul>
+</table>
 <% end %>

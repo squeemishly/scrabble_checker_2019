@@ -42,6 +42,6 @@ class WordChecker
 
   def return_word_scores(tiles)
     words = find_words(tiles)
-    return_scores(words)
+    return_scores(words).to_json
   end
 end

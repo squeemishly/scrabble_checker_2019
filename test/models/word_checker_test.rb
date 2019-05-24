@@ -34,7 +34,7 @@ class WordCheckerTest < Minitest::Test
   end
 
   def test_it_can_return_the_score_for_each_word_in_a_group_of_tiles
-    result = {"ah"=>5, "ha"=>5, "as"=>2, "sh"=>5, "ahs"=>6, "ash"=>6, "has"=>6, "sha"=>6}
+    result = "{\"ah\":5,\"ha\":5,\"as\":2,\"sh\":5,\"ahs\":6,\"ash\":6,\"has\":6,\"sha\":6}"
 
     assert_equal result, wc.return_word_scores("ahs")
   end
